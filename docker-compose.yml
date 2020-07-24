@@ -1,0 +1,14 @@
+version: "2"
+
+services:
+  arch:
+    build: arch
+    restart: always
+    ports:
+      - "2222:22"
+
+  ubuntu:
+    build: ubuntu
+    restart: always
+    ports:
+      - "2223:22"

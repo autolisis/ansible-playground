@@ -1,0 +1,8 @@
+[arch]
+ansible-arch
+
+[ubuntu]
+ansible-ubuntu
+
+[arch:vars]
+ansible_python_interpreter=/usr/bin/python
