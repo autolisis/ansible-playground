@@ -1,10 +1,7 @@
 FROM ubuntu:latest
 
-COPY authorized_keys /tmp/authorized_keys
-RUN mkdir /root/.ssh
-RUN cp -R /tmp/authorized_keys /root/.ssh
-RUN chmod 0700 /root/.ssh
-RUN chmod 0600 /root/.ssh/authorized_keys
+COPY . /tmp
+RUN /tmp/bootstrap.sh
 
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update
