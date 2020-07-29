@@ -1,0 +1,27 @@
+# vim:set ft=yaml :
+all:
+  hosts:
+    ansible-arch:
+      ansible_python_interpreter: /usr/bin/python
+    ansible-ubuntu:
+  children:
+    arch:
+      hosts:
+        ansible-arch:
+      vars:
+        host_to_copy_to: ubuntu
+    ubuntu:
+      hosts:
+        ansible-ubuntu:
+# [arch]
+# ansible-arch
+
+# [ubuntu]
+# ansible-ubuntu
+
+# [arch:vars]
+# ansible_python_interpreter=/usr/bin/python
+# host_to_copy_to="ubuntu"
+
+# ; [vars]
+# ; host_to_copy_to="ubuntu"
